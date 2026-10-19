@@ -11,10 +11,8 @@ def retry(max_attempts, delay):
                     return func() # Оператор return, чтобы прервать цикл попыток при удачном выполнении
                 except Exception as e:
                     print(f'\ntry {attempt + 1}\n{e}')
-                    if attempt == max_attempts - 1:
-                        raise e
-                    else:
-                        sleep(delay)
+                    if attempt == max_attempts - 1: raise e
+                    sleep(delay)
         return wrapper
     return decorator_retry
 
