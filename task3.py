@@ -23,10 +23,6 @@ def func():
  
 # Проверка 
     
-try:
-    func()
-except Exception as e:
-    print(f'\nlast exception\n{e}')
-
 print(f'\n{func.__name__}\n{func.__doc__}')
+func()
 
